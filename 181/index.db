@@ -1,0 +1,6 @@
+-- Write your PostgreSQL query statement below
+SELECT NAME AS Employee FROM EMPLOYEE
+WHERE MANAGERID = ANY(
+    SELECT ID FROM EMPLOYEE AS DB
+    WHERE DB.SALARY < EMPLOYEE.SALARY
+)
